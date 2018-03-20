@@ -1,0 +1,29 @@
+include _config.pug
+doctype html
+html(lang='ru')
+	head
+	title= siteName
+	meta(charset='utf-8')
+	meta(http-equiv='X-UA-Compatible', content='IE=edge')
+	if responsive
+		meta(name="viewport", content="width=device-width, initial-scale=1, max-scale=1")
+	link(rel="shortcut icon" href="favicon.ico")
+	link(rel='apple-touch-icon', href='apple-touch-icon.png')
+	each val in cssList
+		link(rel='stylesheet', href=val)
+	body
+		<!--[if lt IE 9]>
+		p.browserupgrade
+			|Ваш браузер  
+			strong устарел
+			| . Пожалуйста 
+			a(href='http://browsehappy.com/') обновите ваш браузер
+			|  для корректного отображения сайтов.
+		<![endif]-->
+		.page
+			include includes/header
+			block main
+			include includes/footer
+		//scripts =================================================
+		each script in scriptList
+			script(src=script)

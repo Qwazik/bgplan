@@ -1,0 +1,31 @@
+{
+  "name": "startProject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Qwazik/start.git",
+  "author": "Kovakin Alexey <qwazik21@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prod": "set NODE_ENV=production && gulp build && gulp zip"
+  },
+  "dependencies": {
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-remember": "^1.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemap": "^1.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-zip": "^4.1.0",
+    "gulp.spritesmith": "^6.9.0",
+    "pug": "^2.0.0-rc.4"
+  }
+}

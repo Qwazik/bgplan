@@ -1,0 +1,170 @@
+@import "_mixins";
+
+// ---------------------------
+// colors
+// ---------------------------
+
+$white		 : white;
+$orange		 : #ff6e41;
+$grey		 : #f7f7f7;
+$grey-dark	 : #e6eaed;
+$blue-light	 : #8a9094;
+$blue-light2 : #cad3d9;
+$blue		 : #2a363f;
+$blue-dark	 : #1e272e;
+
+// set pseudo
+$lightcolor             : $white; //body
+$main-color             : $orange;
+$muted					: $grey;
+$muted-light			: $grey-dark;
+$secondary-color        : $blue;
+$secondary-color-light  : $blue-light;
+$secondary-color-light2 : $blue-light2;
+$secondary-color-dark	: $blue-dark;
+
+// ---------------------------
+// font sizes
+// ---------------------------
+
+$fz-xl	: 28;
+$fz-l	: 22;
+$fz-m	: 15;
+$fz-s	: 14;
+$fz-xs	: 13;
+$fz-xs1	: 12;
+$fz-xs2	: 11;
+
+// ---------------------------
+// colors
+// ---------------------------
+// buttons colors
+$button-colors: (
+    main: $main-color, 
+    secondary: $secondary-color-light
+);
+// text-colors
+$text-colors: (
+    main: $main-color, 
+    secondary: $secondary-color, 
+    secondary2: $secondary-color-light2,
+    light: $lightcolor
+);
+// text-sizes
+$text-size: (
+	xl: $fz-xl,
+	l: $fz-l,
+	m: $fz-m,
+	s: $fz-s,
+	xs: $fz-xs,
+	xs2: $fz-xs1,
+	xs3: $fz-xs2
+);
+// backgrounds
+$backgrounds-colors: (
+    main: $main-color, 
+    secondary: $secondary-color, 
+    secondary2: $secondary-color-light2,
+    light: $lightcolor
+);
+// headers
+$headers-size: (
+	h1: l,
+	h2: l,
+	h3: s,
+	h4: xs,
+	h5: xs2,
+	h6: xs2
+);
+$headers-colors: (
+	h1: main,
+	h2: main,
+	h3: main,
+	h4: main,
+	h5: main,
+	h6: main
+);
+// borders
+$border-color: $grey-dark;
+
+// ---------------------------
+// body
+// ---------------------------
+$body-font-size: 15;
+$body-background-color: $lightcolor;
+$body-font-family: 'Lato';
+
+// ---------------------------
+// spacing
+// ---------------------------
+
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+// stylelint-disable
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+), $spacers);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+$sizes: map-merge((
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto
+), $sizes);
+// stylelint-enable
+
+// ---------------------------
+// bootstrap grid
+// ---------------------------
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$enable-grid-classes:       true !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1250px
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           20px !default;

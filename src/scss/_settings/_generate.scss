@@ -1,0 +1,52 @@
+/*-------------------------------------------------*/
+/*  buttons
+/*-------------------------------------------------*/
+.btn{
+	display: inline-block;
+	color: white;
+	@each $name, $color in $button-colors{
+		&-#{$name}{
+			background-color: $color;
+		}
+	}
+}
+/*-------------------------------------------------*/
+/*  backgrounds
+/*-------------------------------------------------*/
+
+.backgoround{
+	@each $name, $color in $backgrounds-colors{
+		&-#{$name}{
+			background-color: $color;
+		}
+	}
+}
+
+/*-------------------------------------------------*/
+/*  text
+/*-------------------------------------------------*/
+
+.text{
+	display: inline-block;
+	@each $name, $size in $text-size{
+		&-#{$name}{
+			font-size: fz($size);
+		}
+	}
+	@each $name, $color in $text-colors{
+		&-#{$name}{
+			color: $color;
+		}
+	}
+}
+
+@each $name, $size in $headers-size{
+	.#{$name}{
+		@extend .text-#{$size};
+	}
+}
+@each $name, $color in $headers-colors{
+	.#{$name}{
+		@extend .text-#{$color};
+	}
+}
