@@ -247,7 +247,7 @@ gulp.task('build:sprite', function (callback) {
 /*-------------------------------------------------*/
 gulp.task('clean', function(callback){
 	cached.caches = {};
-	del(['build/**/*', '!build/libs']).then(paths => {
+	del(['build/**/*', '!build/libs', '!.git']).then(paths => {
     	callback();
     });
 	
